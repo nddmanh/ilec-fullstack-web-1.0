@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 2</title>
+</head>
+<body>
+    <script>
+        let ourItems = [ "T-shirt", "Sweater"];
+
+        let choice = prompt ( `Welcome to our shop, what do you want (C, R, U, D)?`);
+
+        switch (choice) {
+            case "R": {
+                for (let i = 0; i < ourItems.length; i++) {
+                    console.log( ourItems[i] );
+                }
+                break;
+            }
+            case "C": {
+                let newItems = prompt(`Enter new item: `);
+                ourItems.push(newItems);
+                for (let i = 0; i< ourItems.length; i++) {
+                    console.log( ourItems[i] );
+                }
+                break;
+            }
+            case "U" : {
+                updatePosition = parseInt(prompt(`Update position?`)) - 1 ;
+
+                if ( Boolean(updatePosition >= 0) == true) {
+                    let newItem = prompt(`Enter new item: `);
+
+                    ourItems.splice( updatePosition, 0, newItem);
+
+                    for (let i = 0; i < ourItems.length; i++) {
+                        console.log( ourItems[i] );
+                    }
+                } else {
+                    console.log("vui long nhap dung vi tri can chen");
+                }
+                break;
+            }
+            case "D": {
+                deletePosition = parseInt(prompt(`Delete position?`)) - 1 ;
+
+                if ( Boolean(deletePosition >= 0) == true) {
+                    ourItems.splice( deletePosition, 1);
+
+                    for (let i = 0; i< ourItems.length; i++) {
+                        console.log( ourItems[i] );
+                    }
+                } else {
+                    console.log("vui long nhap dung vi tri can xoa");
+                }
+                break;
+            }
+            default : {
+                console.log(" vui long nhap dung ky tu");
+
+            }
+        }
+
+    </script>
+</body>
+</html>

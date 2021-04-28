@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Students</title>
+</head>
+<body>
+    <script>
+        let students = [
+            {
+                "name":"Nguyễn Đức Mạnh",
+                "id": 101,
+                "phone": "0789307845",
+                "class":"12A"
+            },
+            {
+                "name":"Nguyễn Ngọc Ngạn",
+                "id": 102,
+                "phone": "0123456789",
+                "class": "12B"
+            },
+            {
+                "name":"Trần Tấn Lực",
+                "id": 103,
+                "phone": "0987654321",
+                "class": "12B"
+            },
+            {
+                "name":"Nguyễn Đức Nam",
+                "id": 104,
+                "phone": "06789101112",
+                "class": "12A"
+            },
+            {
+                "name":"Lê Hữu Thăng Long",
+                "id": 105,
+                "phone": "045678191113",
+                "class": "12A"
+            }
+        ];
+
+        function creatStudent() {
+            let oneStudent = { };
+            oneStudent['name'] = prompt ("new student's name?");
+            oneStudent['id'] = prompt ("new student's id?");
+            oneStudent['phone'] = prompt ("new student's phone?");
+            oneStudent['class'] = prompt ("new student's class?");
+            students.push(oneStudent);
+            students.forEach(student => {
+                console.log(student);
+            });
+        }
+
+        function readStudent() {
+            let id = prompt ('ID student?')
+            students.forEach(student => {
+                if (id == student.id) {
+                    console.log(student);
+                }
+            });
+        }
+
+        function updateStudent() {
+            let id = prompt ('ID student?')
+            students.forEach(student => {
+                if (id == student.id) {
+                    student['name'] = prompt ("update student's name?");
+                    student['phone'] = prompt ("update student's phone?");
+                    student['class'] = prompt ("update student's class?");
+                    console.log(student);
+                }
+            });
+        }
+
+        function deleteStudent() {
+            let id = prompt ('ID student?')
+            let index = students.forEach(student => {
+                if (id == student.id) {
+                    let i = (students.indexOf(student) - 1) ;
+                    return i;
+                } 
+                console.log(student);
+            });
+            students.splice( index , 1);
+
+        }
+
+        function main() {
+            let CRUD = 'CRUD';
+            do {
+                choice = prompt (`What do you want (C, R, U, D)?`);
+            } while ( CRUD.includes(choice) == false );
+
+            switch (choice) {
+                case 'C' : {
+                    creatStudent();
+                    break;
+                }
+                case 'R' : {
+                    readStudent();
+                    break;
+                }
+                case 'U' : {
+                    updateStudent();
+                    break;
+                }
+                case 'D' : {
+                    deleteStudent();
+                    break;
+                }
+            }
+
+        }
+
+        main();
+
+    </script>
+</body>
+</html>
