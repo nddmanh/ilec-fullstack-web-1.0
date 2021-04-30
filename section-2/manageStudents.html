@@ -11,52 +11,75 @@
         let students = [
             {
                 "name":"Nguyễn Đức Mạnh",
-                "id": 101,
+                "id": "101",
                 "phone": "0789307845",
                 "class":"12A"
             },
             {
                 "name":"Nguyễn Ngọc Ngạn",
-                "id": 102,
+                "id": "102",
                 "phone": "0123456789",
                 "class": "12B"
             },
             {
                 "name":"Trần Tấn Lực",
-                "id": 103,
+                "id": "103",
                 "phone": "0987654321",
                 "class": "12B"
             },
             {
                 "name":"Nguyễn Đức Nam",
-                "id": 104,
+                "id": "104",
                 "phone": "06789101112",
                 "class": "12A"
             },
             {
                 "name":"Lê Hữu Thăng Long",
-                "id": 105,
+                "id": "105",
                 "phone": "045678191113",
                 "class": "12A"
             }
         ];
 
+        function checkUniqueById(id) {
+            let i = 0;
+            students.forEach( student => {
+                if ( id === student.id) {
+                    i = i + 1;
+                } 
+            });
+            if (i == 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
         function creatStudent() {
             let oneStudent = { };
-            oneStudent['name'] = prompt ("new student's name?");
-            oneStudent['id'] = prompt ("new student's id?");
-            oneStudent['phone'] = prompt ("new student's phone?");
-            oneStudent['class'] = prompt ("new student's class?");
-            students.push(oneStudent);
-            students.forEach(student => {
-                console.log(student);
-            });
+
+            let id = prompt ("new student's id?");
+            
+            if ( checkUniqueById(id) === 1 ) {
+                oneStudent['name'] = prompt ("new student's name?");
+                oneStudent['id'] = id;
+                oneStudent['phone'] = prompt ("new student's phone?");
+                oneStudent['class'] = prompt ("new student's class?");
+                
+                students.push(oneStudent);
+                students.forEach(student => {
+                    console.log(student);
+                });
+            } else {
+                console.log("ID existed!");
+                creatStudent();
+            }    
+            
         }
 
         function readStudent() {
             let id = prompt ('ID student?')
             students.forEach(student => {
-                if (id == student.id) {
+                if (id === student.id) {
                     console.log(student);
                 }
             });
@@ -65,7 +88,7 @@
         function updateStudent() {
             let id = prompt ('ID student?')
             students.forEach(student => {
-                if (id == student.id) {
+                if (id === student.id) {
                     student['name'] = prompt ("update student's name?");
                     student['phone'] = prompt ("update student's phone?");
                     student['class'] = prompt ("update student's class?");
@@ -77,7 +100,7 @@
         function deleteStudent() {
             let id = prompt ('ID student?')
             let index = students.forEach(student => {
-                if (id == student.id) {
+                if (id === student.id) {
                     let i = (students.indexOf(student) - 1) ;
                     return i;
                 } 
@@ -86,32 +109,39 @@
             students.splice( index , 1);
 
         }
-
+        function exit() {
+            askExit = prompt('Do you want to continure? Y/N');
+            if(askExit.toLowerCase() === 'y') {
+                main();
+            }
+            return;
+        }
         function main() {
             let CRUD = 'CRUD';
             do {
                 choice = prompt (`What do you want (C, R, U, D)?`);
+                switch (choice) {
+                    case 'C' : {
+                        creatStudent();
+                        break;
+                    }
+                    case 'R' : {
+                        readStudent();
+                        break;
+                    }
+                    case 'U' : {
+                        updateStudent();
+                        break;
+                    }
+                    case 'D' : {
+                        deleteStudent();
+                        break;
+                    }
+                }
+
             } while ( CRUD.includes(choice) == false );
 
-            switch (choice) {
-                case 'C' : {
-                    creatStudent();
-                    break;
-                }
-                case 'R' : {
-                    readStudent();
-                    break;
-                }
-                case 'U' : {
-                    updateStudent();
-                    break;
-                }
-                case 'D' : {
-                    deleteStudent();
-                    break;
-                }
-            }
-
+            exit();
         }
 
         main();
