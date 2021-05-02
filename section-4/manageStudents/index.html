@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Student</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> -->
+</head>
+<body>
+    <h1>Trang quản lý sinh viên trường Peptit</h1>
+    
+    <h2>Bạn muốn tìm sinh viên?</h2>
+    <form id="myForm">
+        <input type="text" id="inputGet" placeholder="nhập id sinh viên">
+        <button type="button" id="btnSearchById" >Search</button>
+        <button id="btnCreateStudent" type="button">Thêm sinh viên</button>
+    </form>
+    <br>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Tên sinh viên</th>
+            <th>SĐT</th>
+            <th>Lớp</th>
+            <th>Trạng thái</th>
+        </tr>
+        <tr id="appear" class="visible">
+            <th id="idStudent"></th>
+            <th id="nameStudent"></th>
+            <th id="phoneStudent"></th>
+            <th id="classStudent"></th>
+            <th> 
+                <button type="button" id="btnEditById">Sửa</button> 
+                <button type="button" id="btnDeleteById"> Xóa</button> 
+            </th>
+        </tr>
+        
+    </table>
+
+    <form id="form-update" class="visible" >
+        <h2 id="headLine"></h2> 
+        <div id="input-id" class="visible" >
+            <h3>ID của sinh viên</h3>  
+            <input id="updateId" placeholder="nhập id sv"> 
+        </div>
+        
+        <div id="downLine" >
+            <h3>Họ tên sinh viên</h3>  
+            <input id="updateName" placeholder="nhập tên sv"> 
+            <h3>SĐT của sinh viên</h3>
+            <input id="updatePhone" placeholder="nhập sđt sv"> 
+            <h3>Lớp của sinh viên   </h3>
+            <input id="updateClass" placeholder="nhập lớp sv"> 
+            <br>
+            <button id="btnCreate" type="button" class="visible"> Tạo mới</button>
+            <br>
+            <button style="margin-top: -30px;" id="btnUpdate" type="button" class="visible"> Cập nhật</button>
+
+        </div>
+        
+        
+    </form>
+
+    <h2 id="noti"></h2>
+
+    <script src="manageStudents.js"></script>
+</body>
+</html>
