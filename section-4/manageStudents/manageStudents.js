@@ -160,6 +160,9 @@
 
     //Delete Student By Id
     btnDeleteById.addEventListener('click', (e) => {
+        document.getElementById("inputGet").value = "";
+
+
         let index = students.forEach(student => {
             if ( document.getElementById("idStudent").innerHTML === student.id) {
                 let i = ( students.indexOf(student) ) ;
@@ -169,6 +172,7 @@
         });
         delete students[index];
     
+        document.getElementById("idStudent").innerHTML = "";
         appear.classList.add("visible");
         formUpdate.classList.add("visible");
         noti.classList.remove("visible");
