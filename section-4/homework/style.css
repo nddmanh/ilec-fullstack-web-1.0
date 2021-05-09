@@ -1,0 +1,62 @@
+.create-container {
+    padding: 20px;
+  }
+  
+  .create-container input {
+    margin: 10px;
+  }
+  
+  .search-container {
+    margin-top: 40px;
+    padding: 20px;
+  }
+  
+  .search-container input {
+    margin: 10px;
+    width: 400px;
+  }
+  
+  .list-container {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .list-container .student-list {
+    width: 40%;
+    display: inline-block;
+  }
+  
+  .list-container .update-container {
+    width: 30%;
+    margin-top: 20px;
+    margin-left: 200px;
+    display: none;
+  }
+  
+  .list-container .student-list button {
+    margin-right: 10px;
+  }
+  
+  .list-container .student-list li span {
+    display: inline-block;
+    margin-right: 40px;
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .update-container input {
+    display: block;
+    margin: 10px;
+  }
+  
+  .update-container button {
+    margin-left: 20px;
+  }
+  .opacity {
+    opacity: 0;
+  }
+  .display {
+    opacity: 1;
+  }
