@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Farro&family=Open+Sans:wght@600&display=swap');
+body {
+    background-color: #f4a261;
+    font-family: 'Farro', sans-serif;
+}
+canvas {
+    border: 1px solid #eaeaea;
+    background-color: #e9c46a;
+}
+h1, h3{
+    text-align: center;
+    margin: 20px;
+    font-weight: bold;
+}
+.row {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.container2 {
+    display: flex;
+    justify-content: center;
+}
+
+#black {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(97, 97, 97);
+}
+.origin {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    z-index: 2;
+}
+#btnPlay {
+    cursor: pointer;
+}
+#game {
+    position: absolute;
+    z-index: 1;
+}
+
+.disappear {
+    display: none;
+    opacity: 0;
+}

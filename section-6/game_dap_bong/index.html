@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đập gạch</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="text">
+        <h1>Game đập bóng</h1>
+        <h3 >Điểm của bạn: <span id="score">0</span> </h3>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="level">
+                    <select id="select" onchange="getSelectValue();" class="form-select" aria-label="Default select example">
+                        <option selected>Chọn độ khó cho game</option>
+                        <option value="1">Dễ</option>
+                        <option value="2">Trung bình</option>
+                        <option value="3">Khó</option>
+                    </select>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="container2">
+        <div id="black" class="origin">
+            <button id="btnPlay" type="button" class="btn btn-success">PLAY GAME</button>
+        </div>
+        
+        <canvas id="game" width="500px" height="500px"></canvas>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
