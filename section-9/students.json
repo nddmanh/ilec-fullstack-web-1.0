@@ -1,0 +1,17 @@
+{
+    "students" : [
+        {
+            "id" : "1",
+            "email":"ducmanh@gmail.com",
+            "name" : "Dwc Manh",
+            "age" : 21
+        },
+        {
+            "id" : "2",
+            "email":"ducnam@gmail.com",
+            "name" : "Dwc Nam",
+            "age" : 21
+        }
+    ]
+
+}
