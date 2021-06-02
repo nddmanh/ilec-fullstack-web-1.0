@@ -5,18 +5,21 @@ const BookSchema = mongoose.Schema({
   year: Number,
   author: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "author"
+    ref: "Author"
   },
   category: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "category"
+    ref: "Category"
   }
 });
 
 const Book = mongoose.model('Book', BookSchema);
 
 const find = function () {
-  return Book.find({}).populate('author', 'category').exec(); 
+  return Book.find({})
+  .populate('author')
+  .populate('category')
+  .exec(); 
 }
 
 const findById = function (id, cb) {
