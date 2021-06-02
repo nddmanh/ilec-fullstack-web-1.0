@@ -1,0 +1,1 @@
+Đây là backend cho 1 thư viện gồm 3 Collection: Author, Book, Category.
