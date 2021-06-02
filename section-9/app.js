@@ -1,7 +1,19 @@
+const { render } = require('ejs');
 const express = require('express')
 const app = express()
 const router = express.Router();
+var path = require('path');
+
 var fs = require('fs');
+
+// Set up EJS
+app.set('view engine', 'ejs');
+app.set('views', './views');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use("/stylesheets", express.static(__dirname + "/stylesheets"));
+app.use("/javascripts", express.static(__dirname + "/javascripts"));
+app.use("/images", express.static(__dirname + "/images"));
+
 
 //Check Unique By Id
 function checkUniqueById(Student, id) {
@@ -55,6 +67,7 @@ function checkName (Student) {
     }
 }
 
+
 fs.readFile('./students.json', 'utf8', function (error, data) {
     if(error) {
         throw error;
@@ -65,7 +78,8 @@ fs.readFile('./students.json', 'utf8', function (error, data) {
 
     //GET
     router.get('/students', function (req, res) {
-        res.json(student.students);
+        // res.json(student.students);
+        res.render('index');
     });
 
     //POST
