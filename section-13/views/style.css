@@ -1,0 +1,139 @@
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+.create-container {
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: 30px;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: #e8f6f9;
+}
+
+.create-container div span {
+    width: 130px;
+}
+
+ .create-container div {
+     margin: 10px;
+ }
+
+#create-button {
+    width: 170px;
+}
+
+.edit-button, .del-button {
+    width: 50px;
+    height: 50px;
+}
+
+.edit-button {
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: rgb(76, 100, 76);
+    color: black;
+}
+.del-button {
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: rgb(230, 60, 30);
+    color: black;
+}
+
+.big-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 10px 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: #e8f6f9;
+}
+#inputId {
+    width: 50%;
+    margin-bottom: 10px;
+}
+.student-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    padding-right: 10px;
+}
+
+.update-container {
+    width: 25%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.update-container div span {
+    width: 40%;
+}
+
+.update-container div {
+    margin: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+table, th, td, tr {
+    padding: 5px;
+}
+
+th {
+    text-align: center;
+}
+
+th, td, tr {
+    border: 1px solid rgb(128, 118, 118);
+}
+
+#update-button {
+    margin-top: 10px;
+}
+
+.id-cell {
+    text-align: center;
+}
+.option-cell {
+    text-align: center;
+}
+
+.update-noti, .create-noti{
+    border: none;
+    color: rgb(47, 221, 154);
+}
+
+#page ul {
+    list-style: none;
+    display: flex;
+}
+
+#page ul li {
+    margin-left: 20px;
+}
+
+.pagination-container .btn-primary {
+    margin: 0px 3px;
+  }
+  
+  .input-form-ctn {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  
+  .sort-box {
+    width: 150px;
+    margin-left: 50px;
+  }
