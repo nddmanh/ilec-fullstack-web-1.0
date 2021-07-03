@@ -1,0 +1,96 @@
+@import '~antd/dist/antd.css';
+
+.header {
+  background: #eff1f0;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.header .logo {
+  width: 150px;
+  cursor: pointer;
+}
+
+.menu-indicator {
+  cursor: pointer;
+}
+
+.footer {
+  background: #eff1f0;
+  padding: 10px;
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.footer-info__menu h3 {
+  font-weight: 400;
+  color: rgba(0,0,0,.95);
+}
+
+.footer-info__menu nav span {
+  display: block;
+  margin: 10px 0px;
+  color: rgba(0,0,0,.55);
+  cursor: pointer;
+}
+
+.footer-info__menu nav span:hover {
+  color: rgba(0,0,0, .7);
+}
+
+.footer-info__contact div {
+  margin: 10px 0px;
+  color: rgba(0,0,0, .7);
+  font-size: 17px;
+}
+
+.copyright {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.copyright span {
+  font-size: 18px;
+  color: rgba(0,0,0,0.9);
+}
+
+.feature-product {
+  margin-top: 40px;
+}
+
+.feature-product h3 {
+  color: #585858;
+  font-size: 25px;
+  text-align: center;
+}
+
+.product-container {
+  padding: 0px 30px;
+}
+
+.product-item {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.product-item h4 {
+  color: #585858;
+  font-size: 21px;
+  text-align: center;
+}
+
+.product-item p {
+  color: #0d4732;
+  font-size: 18px;
+  text-align: center;
+}
+
+.product-item img {
+  width: 100%;
+}

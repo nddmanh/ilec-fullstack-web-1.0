@@ -1,9 +1,8 @@
 const repository = require('./category.repository');
 
 const find = function (query) {
-
   // Transform query - Data validation
-  const supportedQueryFields = ['category'];
+  const supportedQueryFields = ['title', 'description'];
 
   Object.keys(query).forEach(function (key) {
     if (!supportedQueryFields.includes(key)) {

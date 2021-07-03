@@ -18,15 +18,15 @@ export default class App extends React.Component {
   
   async componentDidMount() {
     // Get Id Category cake
-    const cakeCate = await get('/categories?limit=1&category=Cake');
+    const cakeCate = await get('/categories?category=Cake');
     const idCake = cakeCate.data[0]._id ;
 
     // Get Id Category bread
-    const breadCate = await get('/categories?limit=1&category=Bread');
+    const breadCate = await get('/categories?category=Bread');
     const idBread = breadCate.data[0]._id ;
 
     // Get Id Category beverages
-    const beverageCate = await get('/categories?limit=1&category=Beverages');
+    const beverageCate = await get('/categories?category=Beverages');
     const idBeverage = beverageCate.data[0]._id ;
 
     // Get data
