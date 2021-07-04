@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { get } from '../services/http';
 import { Dropdown, Menu } from 'antd';
 import './style.css';
-
+import { ShoppingCartOutlined } from '@ant-design/icons';
 export default class Header extends React.Component {
   state = {
     categories: []
@@ -33,12 +33,20 @@ export default class Header extends React.Component {
     </Menu>
 
     return <header className="header">
-      <Link to="/">
-        <img className="logo" src="logo.jpeg" alt="Logo"/>
-      </Link>
-      <Dropdown overlay={menu}>
-        <span className="menu-indicator">Menu</span>
-      </Dropdown>
+      <div className="header-left">
+        <Link to="/">
+          <img className="logo" src="logo.jpeg" alt="Logo"/>
+        </Link>
+        <Dropdown overlay={menu}>
+          <span className="menu-indicator">Menu</span>
+        </Dropdown>
+      </div>
+      <div className="header-right">
+        <Link to="/cart">
+          <ShoppingCartOutlined style={{fontSize: 30}} />
+        </Link>
+      </div>
+      
     </header>;
   }
 }

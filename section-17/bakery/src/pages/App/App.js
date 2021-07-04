@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import HomePage from '../HomePage/HomePage';
 import Product from '../Product/Product';
+import Cart from '../Cart/cart';
 
 export default class App extends React.Component {
   render () {
@@ -17,6 +18,9 @@ export default class App extends React.Component {
           </Route>
           <Route path='/products'>
             <Product />
+          </Route>
+          <Route path='/cart'>
+            <Cart />
           </Route>
         </Switch>
       </main>

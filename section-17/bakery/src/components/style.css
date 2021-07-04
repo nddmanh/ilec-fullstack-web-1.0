@@ -5,8 +5,11 @@
   display: flex;
   align-items: center;
   padding: 10px;
+  justify-content: space-between;
 }
-
+.header-right {
+  margin-right: 100px;
+}
 .header .logo {
   width: 150px;
   cursor: pointer;
