@@ -4,6 +4,8 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import HomePage from '../HomePage/HomePage';
 import Product from '../Product/Product';
+import OurStory from '../OurStory/OurStory';
+import NewEvent from '../New&Event/new&event';
 
 export default class App extends React.Component {
   render () {
@@ -17,6 +19,12 @@ export default class App extends React.Component {
           </Route>
           <Route path='/products'>
             <Product />
+          </Route>
+          <Route path='/our-story'>
+            <OurStory />
+          </Route>
+          <Route path='/event'>
+            <NewEvent />
           </Route>
         </Switch>
       </main>

@@ -4,7 +4,8 @@ import { get } from '../../services/http';
 
 export default class HomePage extends React.Component {
   state = {
-    products: []
+    products: [],
+    categories: [],
   }
 
   async componentDidMount() {
@@ -22,12 +23,14 @@ export default class HomePage extends React.Component {
 
       const categoryResponse = await get(`/categories?title=${encodeURIComponent(categoryQuery)}`);
 
+
+      
       if (categoryResponse && categoryResponse.data && categoryResponse.data[0]) {
         const category = categoryResponse.data[0];
-
         const productResponse = await get(`/products?category=${category._id}&limit=6`);
         this.setState({
-          products: productResponse.data
+          products: productResponse.data,
+          categories: categoryQuery,
         });
       }
     } catch (err) {
@@ -37,7 +40,7 @@ export default class HomePage extends React.Component {
 
   render () {
     return <div>
-      <FeatureProduct products={this.state.products}/>
+      <FeatureProduct categories={this.state.categories} products={this.state.products}/>
     </div>
   }
 }

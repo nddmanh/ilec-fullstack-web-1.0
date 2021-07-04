@@ -6,7 +6,13 @@ import './style.css';
 export default class FeatureProduct extends React.Component {
   render () {
     return <div className="feature-product">
-      <h3>Featured Products</h3>
+      <h3>
+        {
+          this.props.categories ?
+          this.props.categories :
+          "Featured Products"
+        }
+      </h3>
       <div className="product-container">
         <Row gutter={60}>
           {

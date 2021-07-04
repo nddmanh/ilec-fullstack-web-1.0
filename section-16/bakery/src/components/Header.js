@@ -39,6 +39,12 @@ export default class Header extends React.Component {
       <Dropdown overlay={menu}>
         <span className="menu-indicator">Menu</span>
       </Dropdown>
+      <Link to="/our-story">
+        <span className="menu-indicator">Our story</span>
+      </Link>
+      <Link to="/event">
+        <span className="menu-indicator">New & evenet</span>
+      </Link>
     </header>;
   }
 }
