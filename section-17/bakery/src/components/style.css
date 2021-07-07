@@ -97,3 +97,14 @@
 .product-item img {
   width: 100%;
 }
+
+.number {
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 0 10px;
+}
+.number>span {
+  color: white;
+}

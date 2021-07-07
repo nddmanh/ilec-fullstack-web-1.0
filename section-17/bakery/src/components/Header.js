@@ -4,7 +4,9 @@ import { get } from '../services/http';
 import { Dropdown, Menu } from 'antd';
 import './style.css';
 import { ShoppingCartOutlined } from '@ant-design/icons';
-export default class Header extends React.Component {
+import { connect } from 'react-redux';
+
+const Component = class Header extends React.Component {
   state = {
     categories: []
   };
@@ -43,10 +45,27 @@ export default class Header extends React.Component {
       </div>
       <div className="header-right">
         <Link to="/cart">
+          {
+            this.props.cart.products.length ?
+            <div className="number">
+              <span>{this.props.cart.products.length}</span>
+            </div>
+            : " "
+          }
+          
           <ShoppingCartOutlined style={{fontSize: 30}} />
+          
         </Link>
       </div>
       
     </header>;
   }
 }
+
+const mapState = (state) => ({
+  cart: state.cart
+})
+
+export default connect(
+  mapState,
+)(Component);
