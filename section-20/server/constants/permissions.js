@@ -1,0 +1,11 @@
+const USER = {
+  READ: 'USER.READ',
+  READ_SELF: 'USER.READ_SELF',
+  CREATE: 'USER.CREATE',
+  UPDATE: 'USER.UPDATE',
+  DELETE: 'USER.DELETE'
+};
+
+module.exports = {
+  USER
+};
