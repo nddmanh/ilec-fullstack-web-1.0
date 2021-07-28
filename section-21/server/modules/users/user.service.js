@@ -37,13 +37,6 @@ const find = function (query, user) {
 }
 
 const getProfile = function (user) {
-  if (!authHelper.authorization(user.permissions, PERMISSIONS.USER.READ_SELF)) {
-    throw new Error({
-      status: 401,
-      message: 'You dont have permission to enter this resource'
-    });
-  }
-
   return repository.findById(user._id);
 }
 

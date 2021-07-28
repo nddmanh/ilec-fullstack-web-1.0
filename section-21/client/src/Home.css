@@ -1,0 +1,144 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.chat-container {
+  width: 400px;
+  height: 600px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555;
+  border-radius: 2px;
+}
+
+.messages-container {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+}
+
+.messages-container .message {
+  margin-bottom: 10px;
+}
+
+.messages-container .message-left {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.messages-container .message-right {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.messages-container .message .message-content {
+  padding: 20px;
+  font-size: 14px;
+  color: #ddd;
+  border: 1px solid #888;
+  border-radius: 10px;
+}
+
+.messages-container .message .message-content .text {
+  text-align: inherit;  
+}
+
+.messages-container .message .message-content .email {
+  text-align: inherit;
+  font-style: italic;
+  font-size: 10px;
+  font-weight: 400;
+  color: #bbb;
+  margin-top: 5px;
+}
+
+.input-container {
+  display: flex;
+  border-top: 2px solid #555;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 15px;
+  color: #ddd;
+  background: transparent;
+  outline: none;
+  border: 0px;
+}
+
+.input-container button {
+  border: 0px;
+  border-left: 1px solid #555;  
+  background: transparent;
+  color: #ddd;
+  width: 80px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #888;
+  border-radius: 6px;
+  padding: 40px;
+  margin-bottom: 10px;
+}
+
+.login-container input {
+  flex: 1;
+  padding: 15px;
+  color: #ddd;
+  background: transparent;
+  outline: none;
+  border: 0px;
+  border-bottom: 1px solid #555;
+}
+
+.login-container button {
+  margin-top: 30px;
+  padding: 8px;
+  border: 1px solid #555;  
+  background: transparent;
+  color: #ddd;
+  width: 80px;
+  cursor: pointer;
+}
+
+.register-link {
+  color: #ddd;
+  font-size: 12px;
+}

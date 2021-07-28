@@ -1,10 +1,6 @@
-const repository = require('./user.repository');
-const authHelper = require('../auth/auth.helper');
-const PERMISSIONS = require('../../constants/permissions');
+const repository = require('./role.repository');
 
-const find = function (query, user) {
-  // check permissions
-  
+const find = function (query) {
   if (!query.limit) {
     throw new Error('Must have limit');
   }
@@ -24,7 +20,7 @@ const find = function (query, user) {
   delete query.offset;
 
   // Transform query - Data validation
-  const supportedQueryFields = ['email', 'phoneNumber'];
+  const supportedQueryFields = ['title', 'description', 'category'];
 
   Object.keys(query).forEach(function (key) {
     if (!supportedQueryFields.includes(key)) {
@@ -36,27 +32,13 @@ const find = function (query, user) {
   return repository.find(query, limit, offset);
 }
 
-const getProfile = function (user) {
-  if (!authHelper.authorization(user.permissions, PERMISSIONS.USER.READ_SELF)) {
-    throw new Error({
-      status: 401,
-      message: 'You dont have permission to enter this resource'
-    });
-  }
-
-  return repository.findById(user._id);
-}
-
-const create = async function (inputs) {
+const create = function (inputs) {
   // Business logic
 
   // Data validation
 
   // Persist data
-  let newUser = await repository.create(inputs);
-  newUser.password = undefined;
-
-  return newUser;
+  return repository.create(inputs);
 }
 
 const update = function (id, newObject, cb) {
@@ -70,8 +52,10 @@ const remove = function (id, cb) {
   repository.remove(id, cb);
 }
 
-const findByEmail = function (email) {
-  return repository.findByEmail(email);
+const getPermissionsByRoleName = async function (name) {
+  const role = await repository.findByName(name);
+  
+  return role && role.permissions || [];
 }
 
 module.exports = {
@@ -79,6 +63,5 @@ module.exports = {
   create: create,
   update: update,
   remove: remove,
-  findByEmail: findByEmail,
-  getProfile: getProfile
+  getPermissionsByRoleName: getPermissionsByRoleName
 };
